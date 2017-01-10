@@ -1,0 +1,644 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{	
+}
+html{
+}
+.wrapper{
+	width:100%;
+    min-height: 300px;
+    background: #f7f7f7;
+}
+.wrapper *{
+    box-sizing:content-box;
+}
+.arrangeCenter {
+    position: relative;
+    width: 980px;
+    max-width: 1350px;
+    height: 620px;
+    margin: 0 auto;
+    overflow: hidden;
+    /*border-radius: 10px;
+    -webkit-box-shadow: 0px -3px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px -3px 3px rgba(0,0,0,0.2);
+    -o-box-shadow: 0px -3px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px -3px 3px rgba(0,0,0,0.2) ;*/
+}
+#tempPool {
+    position: absolute;
+	top:0;
+    left:0;
+    display: none;
+}
+#loadingBlock {
+    display: none;
+    position: absolute;
+	top:0;
+    left:0;
+    z-index: 500;
+    width:100%;
+    height: 100%;
+    
+}
+#loadingBlock .bg {
+    position: absolute;
+	top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+#loadingBlock p {
+    position: relative;
+    top:50%;
+	z-index: 200;
+    width: 200px;
+    height: 60px;
+    margin: -50px auto 0 auto;
+    padding: 50px 0 0 ;
+    color: #FFF;
+    background: url("../images/loading.gif") no-repeat center top ;
+    text-align: center;
+}
+#dayContent{
+	position:absolute;
+	z-index:50;
+	/*left:10px;
+	top:20px;*/
+	width:390px;
+    background:#f1f1f1;
+}
+#dayListBlk{
+    clear: both;
+    overflow: hidden;
+    overflow-y:auto; 
+	height:546px;
+	background:#e6e6e6;
+}
+#pointLibary{
+	overflow:hidden;
+	position:relative;
+	background:#d7d7d7;
+	height:100%;
+    text-align: left;
+}
+#mapBlk{
+	position:relative;
+	top:47px;
+	z-index:10;
+	margin-left:100%;	
+}
+#map{	
+	clear:both;
+	height:600px;	
+}
+#mapTab{
+	position:absolute;
+	top:0;
+	right:50px;
+	height:20px;		
+	background:#666;
+}
+#pointList{
+	position:absolute;
+	top:28px;
+	left:0;
+	z-index:5;	
+	margin:10px 0 0 390px;	
+	padding:15px 0 0 10px;
+	height:100%;
+	overflow-y:auto;
+	
+}
+#pointList ul li{
+	float:left;	
+	position:relative;
+	width:125px;
+	height:125px;
+	margin:0 0 15px 10px; 
+	border:1px #CCC solid;
+    background: #FFF; 
+}
+#pointList ul li span{
+	display:none;
+	position:absolute;
+	bottom:0;
+	width:115px;
+	min-height:15px;
+	padding:5px;
+	background:#4c4c4c;
+	color:#FFF;
+	font-size:12px;  
+}
+#pointList ul li span.name {
+    display: block;
+	padding-top: 8px !important;
+    line-height: 1.25;
+}
+#pointList ul li img{
+	width:125px;
+	height:125px;
+    object-fit:cover;
+}
+#pointList ul li a.remove,.dayList li a.remove{
+	display:none;
+	position:absolute;
+	top:3px;
+	right:3px;
+	width:20px;
+	height:20px;
+	background:url(../images/arrange/arrange_sprite.png) 0 -50px  no-repeat;
+}
+#pointList ul li a.remove:hover,.dayList li a.remove:hover{
+	background-position:-20px -50px;
+}
+
+#pointList ul li:hover a.remove{
+	display:block;
+}
+.dayList{
+    display:none;	
+	width:370px;
+	margin:0 auto;
+}
+
+.dayList li:first-child{
+    background: #fff;      
+}
+.dayList li:first-child::before{
+    position: absolute;
+	bottom:2px;
+    right: 5px;
+    font-size: 14px;
+    content: "start";
+    color: #78acbd;   
+}
+.dayList li a.remove{
+	display: none;
+}
+.dayList li:hover a.remove{
+	display: block; 
+}
+.dayList li a.icon-poi{
+    display: none;
+	width: 20px;
+    height: 20px;
+    position: absolute;
+	top:3px;
+    right: 25px;
+	background:url(../images/arrange/arrange_sprite.png) 0 -70px  no-repeat;
+}
+.dayList li:hover a.icon-poi{
+	display: block;	
+}
+.dayList li a.icon-poi:hover{
+	background-position:-20px -70px;
+}
+.btnInfoClose {
+    display: none;
+}
+#dayTab {
+    position: relative;
+    top: 1px;
+    float: right;
+    overflow: hidden;
+    background: #f1f1f1;
+    width: 335px;
+    height: 45px;
+}
+#dayToolbar{
+	clear:both;
+	height:30px;
+	padding:10px 20px 0 0 ;
+	background:	#e6e6e6;
+
+}
+button::-moz-focus-inner {
+    border:none;
+}
+#btnDayRemove{
+    height:24px;
+    padding:0 10px 0 30px;
+    background:url(../images/arrange/icon-remove.png) left 10px center no-repeat #fafafa;
+    border:1px #cecece  solid;
+    cursor:pointer;
+    color: #7f7a6a;
+    font-size: 12px;
+    line-height: 24px;
+    border-radius: 12px;
+}
+#btnDayOptimize {
+    float:right;
+    display: block;
+    height:24px;
+    margin: 0 10px 0 0;
+    padding:0 5px 0 30px;
+	background: url(../images/arrange/icon-optimize.png) left 10px center no-repeat #fafafa;
+	border:1px #cecece  solid;
+    cursor:pointer;
+    color: #7f7a6a;
+    font-size: 12px;
+    line-height: 24px;
+    box-sizing:border-box;
+    border-radius: 12px;
+}
+#btnDayOptimize:hover,
+#btnDayRemove:hover {
+    background-color: #b4fff7;
+}
+
+#btnDayRemove{
+    float:right;
+    box-sizing:border-box;
+}
+#btnTempSave,
+#btnTempLoad,
+#btnShare,
+#btnDownload{
+    position: relative;
+    display: inline-block;
+    width:70px;
+    height:30px;
+    margin:5px 0 0 5px; 
+    padding:10px 10px 15px 30px;    
+    border:none;
+    cursor:pointer;
+    color:#676358;
+    font-size:12px;
+    border-radius: 5px 5px 0 0;
+}
+#modeSwitch button:before{
+    content:"";
+    display: inline-block;
+    position: absolute;
+    top:8px;
+    left:8px;
+    background:url(../images/arrange/arrange_sprite.png) -45px 0 no-repeat;
+    width: 20px;
+    height: 20px;
+}
+#btnTempSave:hover, #btnTempLoad:hover, #btnShare:hover, #btnDownload:hover {
+     color: #826f62;
+}
+#btnTempSave:hover:before{
+    background-position:-45px -20px;
+}
+#btnTempLoad:before{
+    background-position:-45px -40px !important;
+}
+#btnTempLoad:hover:before{
+    background-position:-45px -60px !important;
+}
+#btnShare:before{
+    background-position:-45px -80px !important;
+}
+#btnShare:hover:before{
+    background-position:-45px -100px !important;
+}
+#btnDownload:before{
+    background-position:-60px -120px !important;
+}
+#btnDownload:hover:before{
+    background-position:-60px -140px !important;
+}
+#btnHelp {
+    position: absolute;
+	top:5px;
+    right:10px;
+    z-index: 500;
+    width: 80px;
+    height: 20px;
+    padding: 0 0 0 10px;
+    background: url(../images/arrange/arrange_sprite.png) 0 -170px no-repeat;
+    border: none;
+    cursor: pointer;
+    color: #676358;
+    font-size: 12px;
+}
+.dayTag {
+    display:inline-block;
+    height:30px;
+    padding:0 0 0 5px;
+    color:#999999;
+    font:18px/50px Arial;
+}
+#dayTab li{
+    position: relative;
+	display:block;
+	float:left;
+	width:22px;	
+	height:20px;
+	padding:8px 5px 5px 5px;
+    margin:11px 8px 0 0;
+	background:#fcfcfc;
+	/*border:1px #e6e6e6 solid;*/
+	border-radius:5px 5px 0 0;
+	cursor:pointer;
+	color:#b3b3b3;
+	text-align:center;
+	font-size:20px;
+    border-bottom:none;
+    font-family: Arial;
+    border: 1px #e6e6e6 solid;
+    border-bottom: none;
+}
+#dayTab li.act{
+	height:20px;
+	cursor:default;
+    color:#666666;
+	background:#e6e6e6;	
+    font:20px/20px Arial;
+    border: none;
+    border-bottom: 1px #e6e6e6 solid;
+}
+#dayAdd{
+    position: relative;
+    top:2px;
+    float:right !important;
+	width:22px !important;
+	height:22px !important;
+	padding:0 !important;
+	font-weight:bold;
+	text-align:center;
+	font-size:30px !important;
+    line-height:27px;
+    border: 2px #779e32 solid !important;
+	border-radius:50% !important;	
+    background: none !important;
+}
+#dayAdd:before,
+#dayAdd:after {
+	content:"";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -1px;
+    background: #779e32;
+}
+#dayAdd:after{
+    transform: rotate(90deg);
+}
+#dayAdd:hover {
+    color: #f5f5f5 !important;
+    background: #666666;
+    border-color: #f5f5f5;
+}
+.dayList li{
+	position:relative;
+	overflow:hidden;
+	min-height:60px;
+	padding:5px;
+	background:#f5f5f5;
+	border-bottom:1px #e6e6e6 solid;
+	cursor:move;	
+    text-align: left;
+}
+.dayList li img{
+	display:block;
+	float:left;
+	width:65px;
+	height:65px;
+	border:2px #666666 solid;
+}
+.dayList li span{
+	display:block;
+	float:left;
+	width:200px;
+	min-height:20px;
+	margin:0 0 0 10px;
+    padding: 3px 0 0 0;
+	font-size:13px;
+    vertical-align: bottom;
+    color: #807d7d;
+
+}
+.dayList li span.name {
+    font-weight: bold;
+    margin-bottom: 3px;	
+    color: #272727;
+}
+.dayList li span.addr {
+    background: url("../images/arrange/icon_location.png") 0 0 no-repeat ;
+    padding-left: 25px;
+    /*cursor: pointer;*/
+}
+.dayList li span.addr:hover {
+    /*color:#FFFFFF;*/
+}
+.dayList li span.tel {
+    background: url("../images/arrange/icon_phone.png") 0 0 no-repeat ;
+    padding-left: 25px;
+}
+.dayList li span.opentime {
+    display: none;
+    background: url("../images/arrange/icon_opentime.png") no-repeat ;
+    padding-left: 20px;
+}
+.dayList.act{
+	display:block !important;	
+}
+.iBoxArrange{
+	position:absolute;
+	z-index:1000;
+	width:160px;
+	height:160px;
+	padding:5px 0 0 0;
+	/*background:url(../images/arrange/arrange-detail-bg.png) top center no-repeat;*/
+    background:#78acbd;
+	text-align:center;	
+}
+.iBoxArrange:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -8px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #78acbd transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+}
+.iBoxArrange span.name{
+	display:block;
+    padding:5px 0 0 5px;
+	color:#FFF;
+	text-align:left;
+    font-size:12px;	
+}
+.iBoxArrange img{
+	width:150px;
+	height:100px;
+}
+#btnArrange{
+    position:absolute;
+    left:72px;
+    bottom:5px;
+    width:23px;
+    height:23px;
+    text-indent:-9999px;
+    background:url(../images/arrange/arrange-add.png) top center no-repeat;
+    border:none;
+    cursor:pointer;
+}
+#btnArrange.cancel{
+    background:url(../images/arrange/arrange-remove.png) top center no-repeat;
+    border:none;
+}
+#btnAddOrCancel{
+    border: 1px #78acbd solid;
+    border-radius: 3px;
+    margin: 10px 0 0 0;
+    padding: 2px 5px;
+}
+#modeSwitch{
+	position:absolute;
+	left:389px;	
+	width:600px;
+    height: 35px;
+    padding: 0 32px 0 0;
+	background:#d7d7d7;
+}
+#modeSwitch a{
+	display:block;
+	float:right;	
+	height:32px;
+	padding:0 5px 0 32px;
+    margin-top: 8px;
+    margin-right: 42px;
+	background:url(../images/arrange/map-icon.png) 5px 5px no-repeat #8ca168;
+    background-size: 22px auto;
+	cursor:pointer;
+	color:#fcfcfc;
+	font:15px/32px "微軟正黑體";
+    text-align: left; 
+}
+.arrange-func{
+    margin-top: 8px;
+    margin-left: 20px;
+}
+#modeSwitch a.tiles{
+	background:url(../images/arrange/tiles-icon.png) 5px 7px no-repeat #8ca168;
+    background-size: 22px auto;
+}
+#sharePanel div{
+    position:relative;
+    margin:0 0 10px;
+    padding:0 0 0 120px;
+    font-size: 13px;
+}
+#sharePanel label.label-name{
+    position:absolute;
+	top:2px;
+    left: 0;
+    display:block;
+    width: 100px;
+    color: #858383;
+    text-align: right;
+    font-size: 13px;
+    font-weight: bold;
+}
+#sharePanel label.fix {
+    position:relative;
+    top:-2px;
+    display:inline-block;
+    min-width:60px;
+    margin:0 0 10px 0;
+}
+#shareTitle{
+    height:20px;
+    line-height:20px;
+}
+#sharePanel input[type="text"], #sharePanel textarea {
+    width:400px;
+    
+}
+#sharePanel textarea{
+    padding:5px 10px;    
+}
+#sharePrice{
+    height:80px;
+}
+#shareComment{
+    height:150px;
+    
+}
+#sharePanel .submitBlk {
+    padding: 0 !important;
+	text-align: center;
+	
+}
+#sharePanel .submitBlk button {
+    
+}
+#helpPanel {
+    overflow: hidden !important;
+}
+.helpSlider {    
+    width: 900px !important;
+    height: 610px !important;
+}
+.flex-direction-nav a{
+    opacity: 1 !important;
+}
+
+.flex-control-nav {
+    width: 900px !important;
+    top: 600px;
+}
+.flex-disabled {
+    display: none !important;
+}
+.flex-next {
+    right: -8px !important;
+}
+.flex-prev {
+    left: -8px !important;
+}
+.game-check-blk {
+    padding-left: 0 !important;
+}
+.arrange-title {
+    width: 90% !important;
+    min-width: 1000px;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #FCFCFC;
+}
+
+.arrange-title .page-name:before {
+    background-position: 0 -65px;
+}
+.link-menu {
+    position: absolute;
+    top: 320px;
+    left:95px;
+}
+.link-menu li {
+    float: left;
+    margin-right: 54px;
+}
+.link-menu .last{
+    margin-right: 0;
+}
+.link-menu a {
+    display: block;
+    width: 105px;
+    height: 135px;
+}
+.arrange-header{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}

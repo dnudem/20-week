@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>20 week</title>
+        
+        	<link rel="stylesheet" href="css/app.css">
+		
+        	<link rel="stylesheet" href="css/jquery-ui.min.css">
+		
+        
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="work-item-wrapper">
+    <div class="work-item-header">
+        <h1 class="main-title">學期工作事項</h1>
+        <ul class="week-mark-list">
+            
+                <li class="item">
+                    -4
+                </li>
+            
+                <li class="item">
+                    -3
+                </li>
+            
+                <li class="item">
+                    -2
+                </li>
+            
+                <li class="item">
+                    -1
+                </li>
+            
+                <li class="item">
+                    1
+                </li>
+            
+                <li class="item">
+                    2
+                </li>
+            
+                <li class="item">
+                    3
+                </li>
+            
+                <li class="item">
+                    4
+                </li>
+            
+                <li class="item">
+                    5
+                </li>
+            
+                <li class="item">
+                    6
+                </li>
+            
+                <li class="item">
+                    7
+                </li>
+            
+                <li class="item">
+                    8
+                </li>
+            
+                <li class="item">
+                    9
+                </li>
+            
+                <li class="item">
+                    10
+                </li>
+            
+                <li class="item">
+                    11
+                </li>
+            
+                <li class="item">
+                    12
+                </li>
+            
+                <li class="item">
+                    13
+                </li>
+            
+                <li class="item">
+                    14
+                </li>
+            
+                <li class="item">
+                    15
+                </li>
+            
+                <li class="item">
+                    16
+                </li>
+            
+                <li class="item">
+                    17
+                </li>
+            
+                <li class="item">
+                    18
+                </li>
+            
+                <li class="item">
+                    19
+                </li>
+            
+                <li class="item">
+                    20
+                </li>
+            
+        </ul>
+    </div>
+    <ul class="work-item-list" id="work-item-list">
+    </ul>
+</div>
+<div class="button-blk">
+    <label class="btn-add pull-left" for="add-panel-switch">Add</label>
+</div>
+<input class="hide-switch" type="checkbox" id="add-panel-switch">
+<div class="modal-panel-blk">
+    <div class="modal-content">
+        <div class="modal-title">新增學期工作事項</div>
+        <label for="add-panel-switch" class="btn-close">關閉</label>
+        <div class="work-add-panel" id="work-add-panel">
+            <div class="row">
+                <label class="label" for="work-title">
+                    工項名稱
+                </label>
+                <input type="text" class="ipt" id="work-title">
+            </div>
+            <div class="row half">
+                <label class="label" for="week-begin">
+                    開始週數
+                </label>
+                <input type="number" class="week-ipt" id="week-begin">
+                <ul class="week-input-list">
+                    
+                        <li class="item" data-value="1">
+                            -4
+                        </li>
+                    
+                        <li class="item" data-value="2">
+                            -3
+                        </li>
+                    
+                        <li class="item" data-value="3">
+                            -2
+                        </li>
+                    
+                        <li class="item" data-value="4">
+                            -1
+                        </li>
+                    
+                        <li class="item" data-value="5">
+                            1
+                        </li>
+                    
+                        <li class="item" data-value="6">
+                            2
+                        </li>
+                    
+                        <li class="item" data-value="7">
+                            3
+                        </li>
+                    
+                        <li class="item" data-value="8">
+                            4
+                        </li>
+                    
+                        <li class="item" data-value="9">
+                            5
+                        </li>
+                    
+                        <li class="item" data-value="10">
+                            6
+                        </li>
+                    
+                        <li class="item" data-value="11">
+                            7
+                        </li>
+                    
+                        <li class="item" data-value="12">
+                            8
+                        </li>
+                    
+                        <li class="item" data-value="13">
+                            9
+                        </li>
+                    
+                        <li class="item" data-value="14">
+                            10
+                        </li>
+                    
+                        <li class="item" data-value="15">
+                            11
+                        </li>
+                    
+                        <li class="item" data-value="16">
+                            12
+                        </li>
+                    
+                        <li class="item" data-value="17">
+                            13
+                        </li>
+                    
+                        <li class="item" data-value="18">
+                            14
+                        </li>
+                    
+                        <li class="item" data-value="19">
+                            15
+                        </li>
+                    
+                        <li class="item" data-value="20">
+                            16
+                        </li>
+                    
+                        <li class="item" data-value="21">
+                            17
+                        </li>
+                    
+                        <li class="item" data-value="22">
+                            18
+                        </li>
+                    
+                        <li class="item" data-value="23">
+                            19
+                        </li>
+                    
+                        <li class="item" data-value="24">
+                            20
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="row half right">
+                <label class="label" for="week-finish">
+                    結束週數
+                </label>
+                <input type="number" class="week-ipt" id="week-finish">
+                <ul class="week-input-list">
+                    
+                        <li class="item" data-value="1">
+                            -4
+                        </li>
+                    
+                        <li class="item" data-value="2">
+                            -3
+                        </li>
+                    
+                        <li class="item" data-value="3">
+                            -2
+                        </li>
+                    
+                        <li class="item" data-value="4">
+                            -1
+                        </li>
+                    
+                        <li class="item" data-value="5">
+                            1
+                        </li>
+                    
+                        <li class="item" data-value="6">
+                            2
+                        </li>
+                    
+                        <li class="item" data-value="7">
+                            3
+                        </li>
+                    
+                        <li class="item" data-value="8">
+                            4
+                        </li>
+                    
+                        <li class="item" data-value="9">
+                            5
+                        </li>
+                    
+                        <li class="item" data-value="10">
+                            6
+                        </li>
+                    
+                        <li class="item" data-value="11">
+                            7
+                        </li>
+                    
+                        <li class="item" data-value="12">
+                            8
+                        </li>
+                    
+                        <li class="item" data-value="13">
+                            9
+                        </li>
+                    
+                        <li class="item" data-value="14">
+                            10
+                        </li>
+                    
+                        <li class="item" data-value="15">
+                            11
+                        </li>
+                    
+                        <li class="item" data-value="16">
+                            12
+                        </li>
+                    
+                        <li class="item" data-value="17">
+                            13
+                        </li>
+                    
+                        <li class="item" data-value="18">
+                            14
+                        </li>
+                    
+                        <li class="item" data-value="19">
+                            15
+                        </li>
+                    
+                        <li class="item" data-value="20">
+                            16
+                        </li>
+                    
+                        <li class="item" data-value="21">
+                            17
+                        </li>
+                    
+                        <li class="item" data-value="22">
+                            18
+                        </li>
+                    
+                        <li class="item" data-value="23">
+                            19
+                        </li>
+                    
+                        <li class="item" data-value="24">
+                            20
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="row">
+                <button class="btn-add" id="btn-work-submit">送出</button>
+            </div>
+        </div>
+    </div>
+    <label for="add-panel-switch" class="overlay"></label>
+</div>
+<canvas id="canvas"></canvas>
+        </div>
+        
+            <script src="js/jquery-1.12.4.min.js"></script>
+        
+            <script src="js/jquery-ui.min.js"></script>
+        
+            <script src="js/global.js"></script>
+        
+    </body>
+</html>
