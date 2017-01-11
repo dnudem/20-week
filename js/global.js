@@ -25,7 +25,7 @@ $(function() {
 			.siblings('.week-ipt')
 			.val(_self.data('value'));
 	});
-	$('.btn-delete').on('click', function() {
+	$('.work-item-list').on('click','.btn-delete', function() {
 		var _self = $(this);
 		var _confirm = confirm('確定要刪除嗎');
 		if (_confirm) {
